@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>user register</title>
+<style>
+body {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: black;
+}
+h1 {
+    padding-top: 2rem;
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+button {
+    background-color: yellow;
+    height: 50px;
+    width: 200px;
+}
+table {
+    margin: 0 auto;
+    text-align: left;
+}
+td {
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+<header>
+    <h1>USER REGISTER</h1>
+</header>
+<form method="POST" action="#">
+<div id="ab">
+    <h2>REGISTER</h2><br>
+    <table>
+        <tr>
+            <td><label for="name">Enter user name:</label></td>
+            <td><input type="text" id="name" name="name" placeholder="Enter user name" required></td>
+        </tr>
+        <tr>
+            <td><label for="age">Enter your age:</label></td>
+            <td><input type="number" id="age" name="age" placeholder="Enter your age" required></td>
+        </tr>
+        <tr>
+            <td><label for="email">Enter your mail:</label></td>
+            <td><input type="email" id="email" name="email" placeholder="Enter your mail" required></td>
+        </tr>
+        <tr>
+            <td><label for="blood_group">Enter your blood group:</label></td>
+            <td>
+                <select id="blood_group" name="blood_group" required>
+                    <option name="bg" value="O+">O+</option>
+                    <option  name="bg" value="O-">O-</option>
+                    <option name="bg" value="AB+">AB+</option>
+                    <option name="bg" value="AB-">AB-</option>
+                    <option name="bg" value="B+">B+</option>
+                    <option name="bg" value="B-">B-</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label>Enter your Gender:</label></td>
+            <td>
+                <input type="radio" name="gender" value="male" required/> Male
+                <input type="radio" name="gender" value="female" required/> Female
+                <input type="radio" name="gender" value="other" required/> Other
+            </td>
+        </tr>
+        <tr>
+            <td><label for="password">Enter user password:</label></td>
+            <td><input type="password" id="password" name="password" placeholder="Enter user password" required></td>
+        </tr>
+        <tr>
+            <td><label for="password1">Confirm your password:</label></td>
+            <td><input type="password" id="password1" name="password1" placeholder="Confirm your password" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:center;">
+                <button type="button" onclick="validate()">Register</button>
+            </td>
+        </tr>
+    </table>
+    <p>Already a member? <a href="user.html">Login</a></p>
+</div>
+</form>
+<script>
+function validate() {
+    let a = document.querySelector("#password").value;
+    let b = document.querySelector("#password1").value;
+    if (a !== b) {
+        alert("Passwords do not match");
+        return false;
+    } else {
+        document.querySelector("form").submit();
+    }
+}
+</script>
+</body>
+</html>
